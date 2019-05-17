@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Website for Testing</title>
+        <style>
+            body {
+                color: #00000;
+                background-size: cover;
+                text-align: left;
+                vertical-align: bottom;
+                text-shadow: #00000;
+            }
+            .top,.bottom{position:fixed;width:100%;z-index:1}.top{top:0}.bottom{bottom:0}
+            
+            .bar{width:100%;overflow:hidden}.center .bar{display:inline-block;width:auto}
+            
+            .tabmenu {
+                background-color: #ff1111;
+                border: 2px solid #ffffff;
+                color: white;
+                padding: 5px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 18px;
+                margin: 5px 5px;
+                cursor: pointer;
+                border-radius: 50%;
+            }
+            
+            .tm_active {
+                background-color: #ff1111;
+                border: 2px solid #ffffff;
+                color: white;
+                padding: 5px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 18px;
+                margin: 5px 5px;
+                cursor: pointer;
+                border-radius: 50%;
+            }
+            
+            .button:hover {
+              box-shadow: 0 12px 16px 0 rgba(255,255,255,0.24), 0 17px 50px 0 rgba(255,255,255,0.19);
+            }
+            
+            div {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            
+            .parallax {
+              /* The image used */
+              background-image: url("images/palm.jpg");
+            
+              /* Set a specific height */
+              min-height: 500px; 
+            
+              /* Create the parallax scrolling effect */
+              background-attachment: fixed;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+            }
+            .parallax2 {
+              /* The image used */
+              background-image: url("images/comp-bio.jpg");
+            
+              /* Set a specific height */
+              min-height: 500px; 
+            
+              /* Create the parallax scrolling effect */
+              background-attachment: fixed;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+            }
+        </style>
+    </head>
+    <body>
+        <center><a href="javascript:switchTab('tb_1', 'content_1');" id="tb_1" class="tm_active">Home</a>
+        <a href="javascript:switchTab('tb_2', 'content_2');" id="tb_2" class="tabmenu">Portfolio</a>
+        <a href="javascript:switchTab('tb_3', 'content_3');" id="tb_3" class="tabmenu">About Me!</a>
+        <a href="javascript:switchTab('tb_4', 'content_4');" id="tb_4" class="tabmenu">Career</a></center>
+<div id="content_1" class="tabcontent"> 
+	   <div class= "parallax"> </div>
+</div> 
+<div id="content_2" class="tabcontent" style="display:none;">
+        <div class= "parallax"> </div>
+        <h1><center>This is my Portfolio Page!</center></h1>
+        <div>
+        <a href="https://docs.google.com/spreadsheets/d/1lp6QPkibC0W75CWthANtFiG9H5KcVKk8D0N_vecdKdo/edit?usp=sharing">Link to Homework Help</a>
+        <a target="_blank" href="https://scratch.mit.edu">
+            <img src="images/scratch.jpg" height="100">
+        </a>
+        </div>
+</div>
+
+<div id="content_3" class="tabcontent" style="display:none;">
+        <div class= "parallax"> </div>
+        <center><h1>This is all about me!</h1></center>
+        <a target="_blank" href="https://scratch.mit.edu">
+            <img src="images/scratch.jpg" height="100">
+        </a>
+</div>
+<div id="content_4" class="tabcontent" style="display:none;">
+    <div class= "parallax2"> </div>
+    <p>Computational biology involves the development and application of data-analytical and theoretical methods, mathematical modeling and computational simulation techniques to the study of biological, ecological, behavioral, and social systems. The field is broadly defined and includes foundations in biology, applied mathematics, statistics, biochemistry, chemistry, biophysics, molecular biology, genetics, genomics, computer science and evolution.<br>
+    <br>Computational biology is different from biological computing, which is a subfield of computer science and computer engineering using bioengineering and biology to build computers, but is similar to bioinformatics, which is an interdisciplinary science using computers to store and process biological data.<br>
+    <br><b>Computational Biologist Salary. </b>The average pay for a Computational Biologist is $93,102 per year.<br>
+    <br><b>Job Growth.</b> The job growth is expected to be 11% between 2014 and 2024.
+    </p>
+</div>
+</body>
+<script>
+  function switchTab(tab_id, tab_content) {
+	// first of all we get all tab content blocks (I think the best way to get them by class names)
+	var x = document.getElementsByClassName("tabcontent");
+	var i;
+	for (i = 0; i < x.length; i++) {
+		x[i].style.display = 'none'; // hide all tab content
+	}
+	document.getElementById(tab_content).style.display = 'block'; // display the content of the tab we need
+ 
+	// now we get all tab menu items by class names (use the next code only if you need to highlight current tab)
+	var x = document.getElementsByClassName("tabmenu");
+	var i;
+	for (i = 0; i < x.length; i++) {
+		x[i].className = 'tabmenu'; 
+	}
+	document.getElementById(tab_id).className = 'tm_active';
+}
+</script>
+</html>

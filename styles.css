@@ -1,6 +1,20 @@
+        .parallax { 
+              background-image: url("images/bg.jpg");
+            
+              /* Set a specific height */
+              height: 500px; 
+            
+              /* Create the parallax scrolling effect */
+              background-attachment: fixed;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+        }
+        
         body {
             background-image: url('images/bg.jpg');
             background-size: cover;
+            background-attachment: scroll;
             text-align: left;
             vertical-align: bottom;
             text-shadow: #00000;
@@ -8,7 +22,8 @@
     .button {
             background-color: #ff1111;
             border: 2px;
-            color: white;
+            color: black;
+            text-shadow: 2px 2px 5px red;
             text-align: center;
             text-decoration: none;
             display: inline-block;
@@ -17,18 +32,32 @@
             cursor: pointer;
             border-radius:60%;
     }
-    div {
-        padding-left: 20px;
-        padding-right: 20px;
-    }  
+    .button {
+          -webkit-transition-duration: 0.4s; 
+          transition-duration: 0.4s;
+        }
+        
+     .button:hover {
+          background-color: yellow; 
+          color: white;
+        }
     .active {
-         background-color: DodgerBlue;
-            border:2px;
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 18px;
-            margin: 5px 5px;
-            cursor: pointer;
-            border-radius:60%;}
+          -webkit-transition-duration: 0.4s; 
+          transition-duration: 0.4s;
+        }
+        
+    .active:hover {
+          background-color: yellow; 
+          color: white;
+        }
+    .active {
+        background-color: DodgerBlue;
+        border:2px;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 18px;
+        margin: 5px 5px;
+        cursor: pointer;
+        border-radius:60%;}
