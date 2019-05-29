@@ -37,4 +37,40 @@
             text-align: left;
             vertical-align: bottom;
             text-shadow: #00000;
-    }
+      }
+      </style>
+      <center> 
+
+          <a href="javascript:switchTab('tb_1', 'content_1');" id="tb_1" class="tabmenu active"><button>1st Content</button></a>
+          <a href="javascript:switchTab('tb_2', 'content_2');" id="tb_2" class="tabmenu"><button>2nd Content</button></a>
+        </center>
+          <div id="content_1" class="tabcontent"> 
+          <center><iframe src="https://appetize.io/embed/gpk6tfwavg6hpev0cmuw8au8um?device=nexus7&scale=45&autoplay=false&orientation=portrait&deviceColor=black" width="360px" height="600px" frameborder="0" scrolling="no"></iframe></center>
+        </div> 
+          <div id="content_2" class="tabcontent" style="display:none;">
+          <p>Your 2nd content</p>
+          <button>Download Resume</button>
+        </div>
+          <div id="content_3" class="tabcontent" style="display:none;">
+        </div>
+        </body>
+        <script>
+          function switchTab(tab_id, tab_content) {
+          // first of all we get all tab content blocks (I think the best way to get them by class names)
+          var x = document.getElementsByClassName("tabcontent");
+          var i;
+          for (i = 0; i < x.length; i++) {
+          x[i].style.display = 'none'; // hide all tab content
+          }
+          document.getElementById(tab_content).style.display = 'block'; // display the content of the tab we need
+          
+          // now we get all tab menu items by class names (use the next code only if you need to highlight current tab)
+          var x = document.getElementsByClassName("tabmenu");
+          var i;
+          for (i = 0; i < x.length; i++) {
+          x[i].className = 'tabmenu'; 
+          }
+          document.getElementById(tab_id).className = 'tm_active';
+          }
+        </script>
+              </html
